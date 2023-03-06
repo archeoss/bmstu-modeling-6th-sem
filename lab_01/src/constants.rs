@@ -1,5 +1,5 @@
-pub const EULER_SIZE: f64 = 0.03;
-pub const EULER_STEPS: usize = 50;
+pub const SIZE: f64 = 0.03;
+pub const STEPS: usize = 50;
 
 // TASK 1
 pub const TASK1_ANALYTIC: fn(f64) -> f64 = |x: f64| 3. * x.exp() - x.powi(2) - 2. * x - 2.;

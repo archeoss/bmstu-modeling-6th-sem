@@ -30,8 +30,8 @@ pub fn task1() {
         " 4-th ",
     ]);
 
-    let args = (0..EULER_STEPS)
-        .map(|step| EULER_SIZE.mul_add(step as f64, TASK1_U0)) // a.mul_add(b, c) == a * b + c
+    let args = (0..STEPS)
+        .map(|step| SIZE.mul_add(step as f64, TASK1_U0)) // a.mul_add(b, c) == a * b + c
         .collect::<Vec<f64>>();
     let (analytic, euler, picard1, picard2, picard3, picard4) = (
         args.iter()
@@ -64,12 +64,11 @@ pub fn task1() {
             .collect(),
         ));
     }
-    // println!("{picard1:?}");
     table.printstd();
 }
 
-//(u^2 + x)u' = 1
-//u(1) = 0
+//1 - 2xuu' = u^3u'
+//u(0.5) = 0
 pub fn task2() {
     let mut table = Table::new();
     let format = format::FormatBuilder::new()
@@ -92,8 +91,8 @@ pub fn task2() {
         " 4-th ",
     ]);
 
-    let args = (0..EULER_STEPS)
-        .map(|step| EULER_SIZE.mul_add(step as f64, TASK2_U0)) // a.mul_add(b, c) == a * b + c
+    let args = (0..STEPS)
+        .map(|step| SIZE.mul_add(step as f64, TASK2_U0)) // a.mul_add(b, c) == a * b + c
         .collect::<Vec<f64>>();
     let (analytic, euler, picard1, picard2, picard3, picard4) = (
         args.iter()
@@ -130,6 +129,8 @@ pub fn task2() {
     table.printstd();
 }
 
+//u'(x) = u^2 + x^2
+//u(0) = 0
 pub fn task3() {
     let mut table = Table::new();
     let format = format::FormatBuilder::new()
@@ -151,8 +152,8 @@ pub fn task3() {
         " 4-th ",
     ]);
 
-    let args = (0..EULER_STEPS)
-        .map(|step| EULER_SIZE.mul_add(step as f64, TASK3_U0)) // a.mul_add(b, c) == a * b + c
+    let args = (0..STEPS)
+        .map(|step| SIZE.mul_add(step as f64, TASK3_U0)) // a.mul_add(b, c) == a * b + c
         .collect::<Vec<f64>>();
     let (euler, picard1, picard2, picard3, picard4) = (
         euler::solve(TASK3_EULER, TASK3_U0, TASK3_X0),

@@ -4,7 +4,11 @@ version = "0.1.0"
 edition = "2021"
 authors = [ "Simeon Romanov <archeosAnacritis@gmail.com>" ]
 license = "GPL-3.0"
-
+readme = "../README.md"
+repository = "https://github.com/archeoss/bmstu-modeling-6th-sem"
+description = "Repository for Modeling course, BMSTU, ICS7, 6th course."
+keywords = ["modeling", "differential equations"]
+categories = ["Modeling", "BMSTU"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 # [dev-dependencies]
