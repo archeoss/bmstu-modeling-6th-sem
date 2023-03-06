@@ -19,3 +19,12 @@ categories = ["Modeling", "BMSTU"]
 
 [dependencies]
 prettytable-rs = "^0.10"
+
+[profile.release]
+# Optimize for size
+strip = true    # Strip symbols from binary; Turn off for cargo bloat command
+# opt-level = "s"
+lto = true    # Link Time optimization, causes a bit longer compilation
+# codegen-units = 1   # Maximize size reduction optimization, causes longer compilation
+# Optimize for speed
+opt-level = 3 
